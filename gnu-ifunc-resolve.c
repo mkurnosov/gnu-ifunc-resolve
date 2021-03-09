@@ -104,6 +104,8 @@ const char *gnu_ifunc_resolve(const char *ifunc_name)
             GElf_Sym sym;
             gelf_getsym(sec_data, i, &sym);
             if ((ptrdiff_t)sym.st_value == sym_rel_addr) {
+                elf_end(elf);
+                close(fd);
                 return elf_strptr(elf, shdr.sh_link, sym.st_name);
             }
         }
