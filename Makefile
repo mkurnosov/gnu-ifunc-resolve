@@ -1,5 +1,5 @@
 prog := gnu_ifunc_resolve
-prog_objs := gnu_ifunc_resolve.o
+prog_objs := gnu-ifunc-resolve.o
 
 CC := gcc
 CFLAGS := -Wall -O0 -std=c99
